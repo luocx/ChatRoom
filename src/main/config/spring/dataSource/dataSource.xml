@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:datasource.properties</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${mysql.driverClassName}"/>
+        <property name="url" value="${mysql.url}"/>
+        <property name="username" value="${mysql.username}"/>
+        <property name="password" value="${mysql.password}"/>
+        <!--  数据库连接池启动时创建的连接数量 我设置的是10个-->
+        <property name="initialSize" value="10" />
+        <!-- 池里不会被释放的最多空闲连接数量。设置为0时表示无限制。 -->
+        <property name="maxIdle" value="5" />
+        <!-- 在不新建连接的条件下，池中保持空闲的最少连接数。 -->
+        <property name="minIdle" value="5" />
+        <!--同一时间可以从池分配的最多连接数量。设置为0时表示无限制。  -->
+        <property name="maxActive" value="10" />
+        <!--  -->
+        <property name="removeAbandoned" value="true" />
+        <!-- 自动回收超时时间(以秒数为单位) -->
+        <property name="removeAbandonedTimeout" value="180" />
+        <!--超时等待时间以毫秒为单位-->
+        <property name="maxWait" value="6000" />
+        <!-- 默认的SQL语句自动提交状态(开启或关闭)设置由连接池本身设置(false由连接池定)，不设置该值setAutoCommit方法不被调用； -->
+        <property name="defaultAutoCommit" value="false" />
+        <!--要求必需是个SELECT类型的SQL语句，至少返回一行，由于它会在所有应用的SQL语句执行之前运行一次，
+                  所以原则上应该对数据库服务器带来的压力越小越好，推荐使用“SELECT 1”  -->
+        <property name="validationQuery">
+            <value>SELECT 1</value>
+        </property>
+        <!-- 表示从连接池中获取连接前是否运行validationQuery，true=运行[默认]，false=不运行 -->
+        <property name="testOnBorrow">
+            <value>true</value>
+        </property>
+        <!--表示将连接归还连接池前是否运行validationQuery，true=运行，false=不运行[默认]；  -->
+        <property name="testOnReturn">
+            <value>false</value>
+        </property>
+        <property name="testWhileIdle" value="true"></property>
+    </bean>
+
+</beans>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="luocxblog@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="luocxblog">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="dazx_test"/>
+    <schema id="4" parent="1" name="dzda"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="jinsan"/>
+    <schema id="7" parent="1" name="my world"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="sys"/>
+    <table id="11" parent="2" name="t_account_info"/>
+    <table id="12" parent="2" name="t_comment"/>
+    <table id="13" parent="2" name="t_image"/>
+    <table id="14" parent="2" name="t_label"/>
+    <table id="15" parent="2" name="t_note"/>
+    <table id="16" parent="2" name="t_user"/>
+    <column id="17" parent="11" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="11" name="UserID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="19" parent="11" name="PhotoUrl">
+      <Position>3</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="20" parent="11" name="NoteNum">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="21" parent="11" name="LookNum">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="22" parent="11" name="UpdateTime">
+      <Position>6</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <key id="23" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="12" name="comment_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="12" name="comment_Text">
+      <Position>2</Position>
+      <DataType>longtext|0</DataType>
+    </column>
+    <column id="26" parent="12" name="CreateTime">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="27" parent="12" name="comment_auther">
+      <Position>4</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="28" parent="12" name="User_Id">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="29" parent="12" name="Note_Id">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="30" parent="12" name="state">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="31" parent="12" name="Parent_id">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="32" parent="12" name="comment_ip">
+      <Position>9</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <key id="33" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>comment_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="13" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="13" name="Image_Uri">
+      <Position>2</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="36" parent="13" name="Note_ID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="37" parent="13" name="Image_Index">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="38" parent="13" name="Create_Time">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="39" parent="13" name="State">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="40" parent="13" name="Column_7">
+      <Position>7</Position>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <key id="41" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="14" name="ID">
+      <Position>1</Position>
+      <DataType>char(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="14" name="LNAME">
+      <Position>2</Position>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <column id="44" parent="14" name="Create_Time">
+      <Position>3</Position>
+      <DataType>char(10)|0</DataType>
+    </column>
+    <key id="45" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="15" name="note_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="15" name="note_Title">
+      <Position>2</Position>
+      <DataType>longtext|0</DataType>
+    </column>
+    <column id="48" parent="15" name="note_content">
+      <Position>3</Position>
+      <DataType>longtext|0</DataType>
+    </column>
+    <column id="49" parent="15" name="note_Head">
+      <Position>4</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="50" parent="15" name="CreateTime">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="51" parent="15" name="UpdateTime">
+      <Position>6</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="52" parent="15" name="State">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="53" parent="15" name="note_auther">
+      <Position>8</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="54" parent="15" name="User_ID">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="55" parent="15" name="note_Label">
+      <Position>10</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="56" parent="15" name="note_Size">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="57" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>note_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="58" parent="16" name="user_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="16" name="user_Name">
+      <Position>2</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="60" parent="16" name="user_Account">
+      <Position>3</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="61" parent="16" name="user_Password">
+      <Position>4</Position>
+      <DataType>varchar(1)|0</DataType>
+    </column>
+    <column id="62" parent="16" name="user_Phone">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="63" parent="16" name="user_Address">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="64" parent="16" name="user_AddCode">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="65" parent="16" name="Image_Id">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="66" parent="16" name="State">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="67" parent="16" name="user_registered">
+      <Position>10</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <key id="68" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

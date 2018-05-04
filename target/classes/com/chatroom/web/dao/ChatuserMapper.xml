@@ -1,0 +1,34 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chatroom.web.dao.ChatuserMapper">
+
+    <select id="findUserByUseraccount" parameterType="String" resultType="com.chatroom.web.entity.User">
+       SELECT id as userId, username, password, useraccount, imgurl, sex, oldyear, remark  FROM chat_user WHERE useraccount = #{useraccount,jdbcType=VARCHAR}
+    </select>
+
+    <select id="findUserById" parameterType="String" resultType="com.chatroom.web.entity.User">
+       SELECT id as userId, username, password, useraccount, imgurl, sex, oldyear, remark  FROM chat_user WHERE id = #{id,jdbcType=VARCHAR}
+    </select>
+
+    <update id="updateUserInfo" parameterType="com.chatroom.web.entity.User" >
+        UPDATE chat_user set
+            username = #{username,jdbcType=VARCHAR},
+            imgurl = #{imgurl, jdbcType=VARCHAR},
+            sex = #{sex, jdbcType=VARCHAR},
+            remark = #{remark, jdbcType=VARCHAR},
+            oldyear = #{oldyear, jdbcType=VARCHAR}
+        WHERE id = #{userid}
+    </update>
+
+    <select id="findEmojiBytype" parameterType="String" resultType="com.chatroom.web.entity.Emoji">
+        SELECT id, type, info, unicode,bytechar from t_emoji where type = #{type, jdbcType=VARCHAR}
+    </select>
+
+    <update id="updateUserPwd" parameterType="com.chatroom.web.entity.User" >
+        UPDATE chat_user set
+        password = #{password,jdbcType=VARCHAR}
+        WHERE id = #{userid}
+    </update>
+</mapper>

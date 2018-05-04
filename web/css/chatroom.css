@@ -1,0 +1,37 @@
+.list-group-item {
+    background-color: #e8e8e8;
+    border: 0;
+}
+
+.panel {
+    background-color: #f1f1f1;
+    border-left: 0;
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+.msg-row {
+    /*height: 35px;*/
+    line-height: 30px;
+    display: inline-block;
+    border-radius: .25em;
+}
+
+.msg-text {
+    min-height: 1em;
+    font-size: 17px;
+    padding: 7px;
+    color: white;
+    word-wrap: break-word;
+}
+
+.send-row, .get-row {
+    margin-bottom: 20px;
+}
+
+.send-message{
+    background-color: #5cb85c;
+}
+.get-message{
+    background-color: #5bc0de;
+}
